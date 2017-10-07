@@ -857,7 +857,7 @@ class BtrFS(Filesystem):
         self.devid = None
 
         proc = subprocess.Popen(
-            'btrfs-show-super --'.split() + [self.device.devpath],
+            'btrfs inspect-internal dump-super --'.split() + [self.device.devpath],
             stdout=subprocess.PIPE)
 
         for line in proc.stdout:
